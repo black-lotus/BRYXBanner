@@ -312,10 +312,13 @@ public class Banner: UIView {
     private func adjustHeightOffset() {
       guard let superview = superview else { return }
       if superview === Banner.topWindow() && self.position == .Top {
-        let statusBarSize = UIApplication.sharedApplication().statusBarFrame.size
-        let heightOffset = min(statusBarSize.height, statusBarSize.width) // Arbitrary, but looks nice.
-        contentTopOffsetConstraint.constant = heightOffset
-        minimumHeightConstraint.constant = statusBarSize.height > 0 ? 80 : 40
+//        let statusBarSize = UIApplication.sharedApplication().statusBarFrame.size
+//        let heightOffset = min(statusBarSize.height, statusBarSize.width) // Arbitrary, but looks nice.
+//        contentTopOffsetConstraint.constant = heightOffset
+//        minimumHeightConstraint.constant = statusBarSize.height > 0 ? 80 : 40
+        
+        contentTopOffsetConstraint.constant = 0
+        minimumHeightConstraint.constant = 64
       } else {
         contentTopOffsetConstraint.constant = 0
         minimumHeightConstraint.constant = 0
